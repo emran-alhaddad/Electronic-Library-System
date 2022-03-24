@@ -1,0 +1,11 @@
+
+RewriteEngine On
+RewriteBase /pushToRepo/E-Library/
+
+RewriteCond %{REQUEST_FILENAME} !/App/Public/(css|js|fonts|icons|images)/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
